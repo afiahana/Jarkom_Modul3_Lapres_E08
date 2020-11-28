@@ -37,12 +37,38 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 
 
 ## 3. Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200
+- Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service dhcp restart ```
+- Pada UML Gresik dan Sidoarjo (Subnet 1), buka file ``` nano /etc/network/interfaces ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Cek keberhasilan di UML Sidoarjo dan/atau Gresik dengan ``` cat /etc/resolv.conf ```
+
 
 ## 4. Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70
+- Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service dhcp restart ```
+- Pada UML Banyuwangi dan Madiun (Subnet 1), buka file ``` nano /etc/network/interfaces ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Cek keberhasilan di UML Banyuwangi dan/atau Madiun dengan ``` cat /etc/resolv.conf ```
 
 ## 5. Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+- Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service dhcp restart ```
+- Cek keberhasilan di semua UML Client dengan ``` cat /etc/resolv.conf ```
 
 ## 6. Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan client pada subnet 3 mendapatkan peminjaman IP selama 10 menit
+- Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service dhcp restart ```
 
 ## 7. Akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA
 
