@@ -40,7 +40,7 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 - Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
 - Konfigurasi seperti gambar di bawah ini
 
-- Jalankan ``` service dhcp restart ```
+- Jalankan ``` service isc-dhcp-server restart ```
 - Pada UML Gresik dan Sidoarjo (Subnet 1), buka file ``` nano /etc/network/interfaces ```
 - Konfigurasi seperti gambar di bawah ini
 
@@ -51,7 +51,7 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 - Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
 - Konfigurasi seperti gambar di bawah ini
 
-- Jalankan ``` service dhcp restart ```
+- Jalankan ``` service isc-dhcp-server restart ```- Jalankan ``` service isc-dhcp-server restart ```
 - Pada UML Banyuwangi dan Madiun (Subnet 1), buka file ``` nano /etc/network/interfaces ```
 - Konfigurasi seperti gambar di bawah ini
 
@@ -61,22 +61,53 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 - Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
 - Konfigurasi seperti gambar di bawah ini
 
-- Jalankan ``` service dhcp restart ```
+- Jalankan ``` service isc-dhcp-server restart ```
 - Cek keberhasilan di semua UML Client dengan ``` cat /etc/resolv.conf ```
 
 ## 6. Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan client pada subnet 3 mendapatkan peminjaman IP selama 10 menit
 - Pada UML Tuban, buka file ``` nano /etc/dhcp/dhcpd.conf ```
 - Konfigurasi seperti gambar di bawah ini
 
-- Jalankan ``` service dhcp restart ```
+- Jalankan ``` service isc-dhcp-server restart ```
 
 ## 7. Akses ke proxy hanya bisa dilakukan oleh Anri sendiri sebagai user TA
+- Pada UML Mojokerto, menjalankan ``` htpasswd -c /etc/squid/passwd userta_e08 ```
+- Input password yaitu ``` inipassw0rdta_e08 ```
+- Membuka file ``` nano /etc/squid/squid.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service squid restart ```
+- Bukti keberhasilan
 
 ## 8. Anri sudah menjadwal pengerjaan TA-nya (8) setiap hari Selasa-Rabu pukul 13.00-18.00
+- Pada UML Mojokerto, buka file ``` nano /etc/squid/acl.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Membuka file ``` nano /etc/squid/squid.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service squid restart ```
+- Bukti keberhasilan
 
 ## 9. Jadwal bimbingan dengan Bu Meguri adalah (9) setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 09.00)
+- Pada UML Mojokerto, buka file ``` nano /etc/squid/acl.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Membuka file ``` nano /etc/squid/squid.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service squid restart ```
+- Bukti keberhasilan
 
 ## 10. Agar Anri bisa fokus mengerjakan TA, (10) setiap dia mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id agar Anri selalu ingat untuk mengerjakan TA🙂
+- Pada UML Mojokerto, buka file ``` nano /etc/squid/restrict-sites.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Membuka file ``` nano /etc/squid/squid.conf ```
+- Konfigurasi seperti gambar di bawah ini
+
+- Jalankan ``` service squid restart ```
+- Bukti keberhasilan
 
 ## 11. Bu Meguri meminta Anri untuk mengubah error page default squid
 
